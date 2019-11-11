@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const Users = require('./users-model');
+const Users = require('./users-model.js');
 const requiresAuth = require('../auth/requires-auth-middleware.js');
 
 router.get('/', requiresAuth, (req, res) => {
@@ -9,6 +9,7 @@ router.get('/', requiresAuth, (req, res) => {
         res.json(users);
     })
     .catch(err=> {
+        console.log(err);
         res.send(err);
     })
 });

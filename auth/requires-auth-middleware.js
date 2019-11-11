@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
             if (user && bcrypt.compareSync(password, user.password)){
                 next()
             } else {
-                res.stauts(401).json({message: 'Invalid, demon!'})
+                res.stauts(401).json({message: 'Invalid, beast!'})
             }
         })
         .catch(err=> {

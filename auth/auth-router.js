@@ -13,11 +13,12 @@ router.post('/register', (req, res)=> {
       res.status(201).json(saved);
   })
   .catch(error=> {
-      res.status(500)/json(error);
+      console.log('Odin is disappointed', error);
+      res.status(500).json(error);
   });
 })
 
-router.post('./login', (req, res)=> {
+router.post('/login', (req, res)=> {
     let {username, password} = req.body;
     
     Users.findBy({username})
