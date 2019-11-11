@@ -1,12 +1,14 @@
-const router = require('./express').Router();
+const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 
 const authRouter = require('../auth/auth-router.js');
+const usersRouter = require('../users/users-router.js');
 
 router.use('/auth', authRouter);
+router.use('/users', usersRouter);
 
 router.get('/', (req, res) => {
-    res.json({api: 'Charge into victory, mates!'})
+    res.json({api: 'To Valhalla!'})
 });
 
 router.post('/hash', (req, res)=> {

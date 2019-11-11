@@ -1,5 +1,5 @@
 const express = require('express');
-const hlemet = require('helmet');
+const helmet = require('helmet');
 
 module.exports = server => {
     server.use(helmet());
