@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  background: rgb(76, 105, 99);
+  height: 100vh;
+  width: 100%;
+}
+
+nav{
+  background: rgb(123, 141, 137);
+  height: 10%;
+  display: flex;
+  align-items: center;
+}
+nav li{
+  list-style: none;
+}
+ nav li a{
+   text-decoration: none;
+   color: black;
+   padding: 0 5px;
+ }
