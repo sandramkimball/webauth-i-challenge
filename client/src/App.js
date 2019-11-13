@@ -16,10 +16,10 @@ function App() {
           <li><Link to='/users'>Users</Link></li>
         </nav>
       <section>
-        <h2>A tale is but half told when only one person tells it!</h2>
+        <h2>A warrior tale is but half told when only one person tells it!</h2>
         <Switch>
           <Route exact path='/' component={Login}/>
-          <Route exact path='/users' component={UserList}/>
+          {<Route exact path='/users' component={UserList}/>}
         </Switch>
       </section>
     </div>

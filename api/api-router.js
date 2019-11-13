@@ -7,9 +7,9 @@ const usersRouter = require('../users/users-router.js');
 router.use('/auth', authRouter);
 router.use('/users', usersRouter);
 
-router.get('/', (req, res) => {
-    res.json({api: 'To Valhalla!'})
-});
+router.get('/', (req, res)=> {
+    res.json({api: 'To Valhalla!', session: req.session})
+})
 
 router.post('/hash', (req, res)=> {
     const password = req.body.password;

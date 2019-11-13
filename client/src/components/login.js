@@ -20,13 +20,18 @@ class Login extends React.Component{
         })
     };
 
+    handleSubmit = e => {
+        e.preventDefault();
+        return <Redirect to='/UserList'/>
+
+    }
+
     login = e => {
         e.preventDefault();
         axiosWithAuth()
         .post('/api/auth/login', this.state.credentials)
         .then (res=> {
-            return <Redirect to='/UserList'/>
-            // this.props.history.push('api/users')
+            console.log(res, 'heil og sæl');
         })
         .catch(err=>console.log('Wrong move, witch.', err))
     };
@@ -34,7 +39,7 @@ class Login extends React.Component{
     render(){
         return (
             <div>
-            <Form>
+            <Form onSubmit={this.handleSubmit}>
                 <input
                     type='text'
                     name='username'
@@ -83,6 +88,7 @@ const Button = styled.button`
     font-size: 18px;
     border: 1px solid black;
     :hover{
-        transform: scale(1.2)
+        transform: scale(1.2);
+        cursor: pointer;
     }
 `;

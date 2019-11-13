@@ -17,10 +17,15 @@ const UserList = () => {
 
     return(
         <div>
-            <h2>Behold the Legends:</h2>
-            {users.map(user=> (
-                <LI key={user.user}>{user.username}</LI>
-            ))}
+            <H2>Behold the Legends</H2>
+            {require.session && (
+                <div>
+                    {users.map(user=> (
+                        <LI key={user.user}>{user.username}</LI>
+                    ))}
+                </div>
+            )}
+            
         </div>
     )
 }
@@ -28,6 +33,21 @@ const UserList = () => {
 export default UserList;
 
 const LI = styled.li`
-    margin: 3px;
-    font-size: 24px;
+    margin: 10px auto;
+    font-size: 20px;
+    color: white;
+    list-style: none;
+    :hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
 `;
+
+const H2 = styled.h2`
+    font-family: 'Pompiere', cursive;
+    font-size: 36px;
+`;
+
+ /* font-family: 'Voltaire', sans-serif;
+font-family: 'Pompiere', cursive;
+font-family: 'Aref Ruqaa', serif; */
